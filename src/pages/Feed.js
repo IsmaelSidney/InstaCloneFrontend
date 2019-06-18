@@ -25,7 +25,7 @@ class Feed extends Component {
     }
 
     registerToSocket = () =>{
-        const socket = io('hhttps://instaclonebackend.herokuapp.com/');
+        const socket = io('https://instaclonebackend.herokuapp.com/');
 
         socket.on('post', newPost =>{
             this.setState({feed: [newPost, ...this.state.feed] })
