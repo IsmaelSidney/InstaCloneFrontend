@@ -1,15 +1,16 @@
-import React, { Component } from 'react';
-import api from '../services/api';
+import React, {Component} from 'react';
+import api from '../services/api'
 
-import './New.css';
+import './New.css'
 
 class New extends Component {
-    state = {
+    state={
         image: null,
         author: '',
         place: '',
         description: '',
         hashtags: '',
+
     };
     handleSubmit = async e =>{
         e.preventDefault();
@@ -27,45 +28,54 @@ class New extends Component {
         this.props.history.push('/');
     }
 
+
+    handleImageChange = e =>{
+        this.setState({ image: e.target.files[0] });
+    }
+
     handleChange = e => {
         this.setState({ [e.target.name]: e.target.value })
     }
 
-    handleImageChange= e => {
-        this.setState({ image: e.target.files[0] })
-    }
-
-    render() {
+    render(){
         return (
-            <form id='new-post' onSubmit={this.handleSubmit}>
-                <input type='file' onChange={this.handleImageChange}/>
+            <form id="new-post"  onSubmit={this.handleSubmit}>
+                <input
+                    type="file"  onChange={this.handleImageChange}
+                />
                 <input
                     type="text"
                     name="author"
                     placeholder="Autor do post"
                     onChange={this.handleChange}
-                    value={this.state.author} />
+                    value={this.state.author}
+                />
                 <input
                     type="text"
                     name="place"
                     placeholder="Local do post"
                     onChange={this.handleChange}
-                    value={this.state.place} />
+                    value={this.state.place}
+                />
                 <input
                     type="text"
                     name="description"
                     placeholder="Descrição do post"
                     onChange={this.handleChange}
-                    value={this.state.description} />
+                    value={this.state.description}
+                />
                 <input
                     type="text"
                     name="hashtags"
                     placeholder="Hashtags do post"
                     onChange={this.handleChange}
-                    value={this.state.hashtags} />
+                    value={this.state.hashtags}
+                />
+                
                 <button type="submit">Enviar</button>
             </form>
         );
     }
 }
+
 export default New;
