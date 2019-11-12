@@ -19,7 +19,7 @@ class New extends Component {
 
         data.append('image', this.state.image);
         data.append('author', this.state.author);
-        data.append('place', this.state.palce);
+        data.append('place', this.state.place);
         data.append('description', this.state.description);
         data.append('hashtags', this.state.hashtags);
 
@@ -72,7 +72,7 @@ class New extends Component {
                     value={this.state.hashtags}
                 />
                 
-                <button type="submit" onClick="handleSubmit">Enviar</button>
+                <button type="submit" >Enviar</button>
             </form>
         );
     }
