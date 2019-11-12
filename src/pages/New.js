@@ -72,7 +72,7 @@ class New extends Component {
                     value={this.state.hashtags}
                 />
                 
-                <button type="submit">Enviar</button>
+                <button type="submit" onClick="handleSubmit">Enviar</button>
             </form>
         );
     }
